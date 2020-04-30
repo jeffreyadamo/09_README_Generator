@@ -52,9 +52,10 @@ inquirer.prompt([
     message: "What kind of license would you like to apply to this project?",
     name: "license",
     choices: [
-      "Copyright",
-      "TM",
-      "R"
+      "MIT",
+      "GPLv2",
+      "Apache",
+      "Other"
     ]
   },
   //Tests
@@ -64,17 +65,17 @@ inquirer.prompt([
     message: "What are tests to perform on this project?"
   },
   //Badges
-  {
-    type: "checkbox",
-    message: "Apply any of these badges?",
-    name: "badges",
-    choices: [
-      "HTML", 
-      "CSS", 
-      "JavaScript", 
-      "MySQL"
-    ]
-  },
+//   {
+//     type: "checkbox",
+//     message: "Apply any of these badges?",
+//     name: "badges",
+//     choices: [
+//       "HTML", 
+//       "CSS", 
+//       "JavaScript", 
+//       "MySQL"
+//     ]
+//   },
   //GitHub username
   {
     type: "input",
@@ -88,34 +89,32 @@ inquirer.prompt([
     message: "What's your email?"
   },
 ]).then(function(data) {
-
-//   var filename = data.name.toLowerCase().split(' ').join('') + ".json";
-
-///////////// THIS WILL WRITE TO A MARKDOWN IN JSON////////////////////
-//   fs.writeFile("readTestMe.md", JSON.stringify(data, null, '\t'), function(err) {
-
-//     if (err) {
-//       return console.log(err);
-//     }
-    // console.log("Success!");
-//   });
-////////////////////////////////////////////////////////////////////////
-//  We can parse out the results and put them in variables
     console.log("Success!");
 
-    console.log(data.title);
-    
-    const title = data.title;
-    const description = data.description;
-    const installation = data.installation;
-    const usage = data.usage;
-    const contributing = data.contributing;
-    const license = data.license;
-    const tests = data.tests;
-    const gitHub = data.gitHub;
-    const badges = data.badges;
+//////////BADGE////////////
+//can use shields.io to insert badge
+let license = "";
+const badges = function(){
+if(data.license === "MIT"){
+    license = "![MIT](https://img.shields.io/badge/license-MIT-green)";
+    return license
+} else if (data.license === "Apache"){
+    license = "![Apache](https://img.shields.io/badge/license-Apache-blue)";
+    return license
+} else if (data.license === "GPLv2"){
+    license = "![GPLv2](https://img.shields.io/badge/license-GPLv2-blue)";
+    return license
+} else if (data.license === "ISC"){
+    license = "![ISC](https://img.shields.io/badge/license-ISC-lightgrey)";
+    return license
+} else{
+    license = "![other](https://img.shields.io/badge/license-other-lightgrey)";
+    return license
+}}
+badges();
+console.log(license);
 
-    //can I insert the markdown template here and just insert the variables?
+// I can insert the markdown template here and just insert the variables?
 
     readMe = 
 `# ${data.title}
@@ -126,9 +125,7 @@ UW Full Stack BootCamp
 (date)
 ***
 
-## Badges go here
-
-Input from index.js: ${data.badges}
+${license}
 
 ## Description
 
@@ -162,7 +159,7 @@ ${data.usage}
 
 ## License
 
-This projects is license under the ${data.license} license.
+${license}
 
 ## Contributing
 

@@ -1,18 +1,16 @@
-# test3
+# test2
 
 ### Jeffrey Adamo  
 UW Full Stack BootCamp  
-[test3](#) at GitHub Pages  
+[test2](#) at GitHub Pages  
 (date)
 ***
 
-## Badges go here
-
-Input from index.js: HTML
+![other](https://img.shields.io/badge/license-other-lightgrey)
 
 ## Description
 
-trying to ge the markdown formatting unindented
+test
 
 ## Table of Contents
 
@@ -33,29 +31,29 @@ trying to ge the markdown formatting unindented
 Please run the following command to install dependencies:
 
 
-
+test
 
 
 ## Usage
 
-
+test
 
 ## License
 
-This projects is license under the Copyright license.
+![other](https://img.shields.io/badge/license-other-lightgrey)
 
 ## Contributing
 
-
+test
 
 ## Tests
 
 To run tests, run the following command:
 
 
-many
+test
 
 
 ## Questions
 
-If you have any questions about the repo, open an issue or contact [jeffreyadamo](http://www.github.com/jeffreyadamo) or contact directly at jeffreyadamo@gmail.com. 
+If you have any questions about the repo, open an issue or contact [test](http://www.github.com/test) or contact directly at test. 
