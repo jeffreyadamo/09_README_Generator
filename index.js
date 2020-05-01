@@ -1,18 +1,6 @@
-// Use node.js to setup a series of questions prompting the user for information that will be used to fill out the README.md sections. Start with these for MVP (likely to add more later):
-
-// Title
-// Description
-// Badges
-// Installation
-// Usage
-// License
-// Contributing
-// Tests
-// Questions
-
 var inquirer = require("inquirer");
 var fs = require('fs');
-
+const axios = require("axios");
 
 //Setup a series of user prompts
 inquirer.prompt([
@@ -55,6 +43,7 @@ inquirer.prompt([
       "MIT",
       "GPLv2",
       "Apache",
+      "ISC",
       "Other"
     ]
   },
@@ -64,35 +53,17 @@ inquirer.prompt([
     name: "tests",
     message: "What are tests to perform on this project?"
   },
-  //Badges
-//   {
-//     type: "checkbox",
-//     message: "Apply any of these badges?",
-//     name: "badges",
-//     choices: [
-//       "HTML", 
-//       "CSS", 
-//       "JavaScript", 
-//       "MySQL"
-//     ]
-//   },
-  //GitHub username
+   //GitHub username
   {
     type: "input",
     name: "gitHub",
     message: "What is GitHub username to associate this project to?"
   },
-  //email
-  {
-    type: "input",
-    name: "email",
-    message: "What's your email?"
-  },
-]).then(function(data) {
+  ]).then(function(data) {
     console.log("Success!");
 
 //////////BADGE////////////
-//can use shields.io to insert badge
+//Use shields.io to insert badge for license
 let license = "";
 const badges = function(){
 if(data.license === "MIT"){
@@ -114,7 +85,29 @@ if(data.license === "MIT"){
 badges();
 console.log(license);
 
-// I can insert the markdown template here and just insert the variables?
+//////axious call to github
+let avatar = "";
+let email = null;
+function emailCheck(email){
+    if(email === null){
+        const noEmail = "GitHub email set as private.";
+        return noEmail
+    } else {
+        return email;
+    }
+}
+console.log("1st email" + emailCheck(email));
+axios
+  .get(`https://api.github.com/users/${data.gitHub}`)
+  .then(function(res) {
+    avatar = res.data.avatar_url
+    email = res.data.email;
+    emailCheck(email);
+    console.log(emailCheck(email));
+    console.log(avatar);
+///////////////////////////////////////////
+ 
+//Insert template literals and variable into the markdown template:
 
     readMe = 
 `# ${data.title}
@@ -122,7 +115,6 @@ console.log(license);
 ### Jeffrey Adamo  
 UW Full Stack BootCamp  
 [${data.title}](#) at GitHub Pages  
-(date)
 ***
 
 ${license}
@@ -175,14 +167,21 @@ ${data.tests}
 
 ## Questions
 
-If you have any questions about the repo, open an issue or contact [${data.gitHub}](http://www.github.com/${data.gitHub}) or contact directly at ${data.email}. `;
+For questions, open an issue or contact my GitHub  
+
+
+<img src="`+avatar+`" width="75">    
+
+@ [${data.gitHub}](http://www.github.com/${data.gitHub})  
+
+`+emailCheck(email)+` `;
 
 
     fs.writeFile("readTestMe2.md", readMe, function(err) {
-
-            if (err) {
-              return console.log(err);
-            }
-            console.log("OMG");
-          });
+        if (err) {
+            return console.log(err);
+        }
+        console.log("OMG");
+        });
+});
 });

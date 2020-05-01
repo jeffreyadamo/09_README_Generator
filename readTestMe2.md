@@ -1,16 +1,16 @@
-# test2
+# README GENERATOR
 
 ### Jeffrey Adamo  
 UW Full Stack BootCamp  
-[test2](#) at GitHub Pages  
+[README GENERATOR](#) at GitHub Pages  
 (date)
 ***
 
-![other](https://img.shields.io/badge/license-other-lightgrey)
+![MIT](https://img.shields.io/badge/license-MIT-green)
 
 ## Description
 
-test
+Trying to develop a readme generator using node.js
 
 ## Table of Contents
 
@@ -31,29 +31,36 @@ test
 Please run the following command to install dependencies:
 
 
-test
+npm install
 
 
 ## Usage
 
-test
+when opening run install info and then update as needed
 
 ## License
 
-![other](https://img.shields.io/badge/license-other-lightgrey)
+![MIT](https://img.shields.io/badge/license-MIT-green)
 
 ## Contributing
 
-test
+check issues at github
 
 ## Tests
 
 To run tests, run the following command:
 
 
-test
+none
 
 
 ## Questions
 
-If you have any questions about the repo, open an issue or contact [test](http://www.github.com/test) or contact directly at test. 
+For questions, open an issue or contact my GitHub  
+
+
+<img src="https://avatars3.githubusercontent.com/u/58490053?v=4" width="75">    
+
+@ [jeffreyadamo](http://www.github.com/jeffreyadamo)  
+
+GitHub email set as private. 
