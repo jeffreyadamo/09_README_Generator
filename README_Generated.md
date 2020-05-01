@@ -1,16 +1,14 @@
-# README GENERATOR
+# README Generated before commit
 
 ### Jeffrey Adamo  
 UW Full Stack BootCamp  
-[README GENERATOR](#) at GitHub Pages  
-(date)
+[README Generated before commit](#) at GitHub Pages  
+![MIT](https://img.shields.io/badge/license-MIT-green)  
 ***
-
-![MIT](https://img.shields.io/badge/license-MIT-green)
 
 ## Description
 
-Trying to develop a readme generator using node.js
+To develop a nice template to easily create a readme
 
 ## Table of Contents
 
@@ -28,7 +26,7 @@ Trying to develop a readme generator using node.js
 
 ## Installation
 
-Please run the following command to install dependencies:
+### Please run the following command to install dependencies:
 
 
 npm install
@@ -36,7 +34,7 @@ npm install
 
 ## Usage
 
-when opening run install info and then update as needed
+need to run node index.js and follow the prompts
 
 ## License
 
@@ -44,14 +42,14 @@ when opening run install info and then update as needed
 
 ## Contributing
 
-check issues at github
+contact me at GitHub
 
 ## Tests
 
-To run tests, run the following command:
+### To run tests, run the following command:
 
 
-none
+none at this time
 
 
 ## Questions

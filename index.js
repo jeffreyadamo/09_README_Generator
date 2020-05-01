@@ -112,12 +112,11 @@ axios
     readMe = 
 `# ${data.title}
 
-### Jeffrey Adamo  
+Jeffrey Adamo  
 UW Full Stack BootCamp  
 [${data.title}](#) at GitHub Pages  
+${license}  
 ***
-
-${license}
 
 ## Description
 
@@ -139,7 +138,7 @@ ${data.description}
 
 ## Installation
 
-Please run the following command to install dependencies:
+### Please run the following command to install dependencies:
 
 
 ${data.installation}
@@ -159,7 +158,7 @@ ${data.contributing}
 
 ## Tests
 
-To run tests, run the following command:
+### To run tests, run the following command:
 
 
 ${data.tests}
@@ -173,11 +172,12 @@ For questions, open an issue or contact my GitHub
 <img src="`+avatar+`" width="75">    
 
 @ [${data.gitHub}](http://www.github.com/${data.gitHub})  
+<font size="1">`+emailCheck(email)+`</font> 
 
-`+emailCheck(email)+` `;
+ `;
 
-
-    fs.writeFile("readTestMe2.md", readMe, function(err) {
+//Create a markdown file//
+    fs.writeFile("README_Generated.md", readMe, function(err) {
         if (err) {
             return console.log(err);
         }
