@@ -99,18 +99,11 @@ function emailCheck(email){
         return email;
     }
 }
-
-axios
-  .get(`https://api.github.com/users/${data.gitHub}`)
-  .then(function(res) {
-    avatar = res.data.avatar_url
-    email = res.data.email;
-    emailCheck(email);
-
-    ///////////////////////////////////////////
+///////////////////////////////////////////
+///README TEMPLATE///
  //Insert template literals and variable into the markdown template:
-
-    readMe = 
+function genReadme(avatar, email){
+let readMe = 
 `# ${data.title}
 
 Jeffrey Adamo  
@@ -177,12 +170,34 @@ For questions, open an issue or contact my GitHub
 
  `;
 
+ markDown(readMe);
+}
+ 
 //Create a markdown file//
-    fs.writeFile("README_Generated.md", readMe, function(err) {
-        if (err) {
-            return console.log(err);
-        }
-        console.log("Look for README_Generated.md in folder");
-        });
-});
-});
+
+function markDown(readMe) { fs.writeFile("README_Generated.md", readMe, function(err) {
+  if (err) {
+      return console.log(err);
+  }
+  console.log("Look for README_Generated.md in folder");
+  });
+}
+
+
+axios
+  .get(`https://api.github.com/users/${data.gitHub}`)
+  .then(function(res) {
+    avatar = res.data.avatar_url;
+    email = res.data.email;
+    emailCheck(email);
+    genReadme(avatar, email);
+    
+  })
+  .catch(function(err) {
+    console.log("no username")
+    avatar = "no pic";
+    email = "no email";
+    genReadme(avatar, email);
+   
+  });
+  })
