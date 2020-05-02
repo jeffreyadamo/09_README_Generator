@@ -1,0 +1,31 @@
+{
+  "name": "09_readme_generator",
+  "version": "1.0.0",
+  "description": "creates a readme from inquirer prompts",
+  "main": "index.js",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "fs": "^0.0.1-security",
+    "inquirer": "^7.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "none"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeffreyadamo/09_README_Generator.git"
+  },
+  "keywords": [
+    "readme",
+    "axios",
+    "inquirer",
+    "fs"
+  ],
+  "author": "Jeffrey Adamo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jeffreyadamo/09_README_Generator/issues"
+  },
+  "homepage": "https://github.com/jeffreyadamo/09_README_Generator#readme"
+}
