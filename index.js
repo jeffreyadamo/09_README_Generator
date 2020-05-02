@@ -8,7 +8,8 @@ inquirer.prompt([
   {
     type: "input",
     name: "title",
-    message: "What is the project title?"
+    message: "What is the project title?",
+    default: "README"
   },
    //Description
    {
@@ -20,7 +21,8 @@ inquirer.prompt([
   {
     type: "input",
     name: "installation",
-    message: "What commands are required for installation?"
+    message: "What commands are required for installation?",
+    default: "npm i"
   },
    //Usage
    {
@@ -91,6 +93,8 @@ function emailCheck(email){
     if(email === null){
         const noEmail = "GitHub email set as private.";
         return noEmail
+    } else if (email === ""){
+      return email
     } else {
         return email;
     }
@@ -102,9 +106,8 @@ axios
     avatar = res.data.avatar_url
     email = res.data.email;
     emailCheck(email);
-    console.log(emailCheck(email));
-    console.log(avatar);
-///////////////////////////////////////////
+
+    ///////////////////////////////////////////
  //Insert template literals and variable into the markdown template:
 
     readMe = 
