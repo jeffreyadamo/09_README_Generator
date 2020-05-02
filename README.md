@@ -4,7 +4,7 @@ Jeffrey Adamo
 UW Full Stack BootCamp  
 [README](https://jeffreyadamo.github.io/09_README_Generator/) at GitHub Pages  
 ![MIT](https://img.shields.io/badge/license-MIT-green)  
-April 2, 2020
+April 2, 2020  
 ***
 
 ## Description
