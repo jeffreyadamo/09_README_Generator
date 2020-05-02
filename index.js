@@ -86,7 +86,7 @@ if(data.license === "MIT"){
 }}
 badges();
 
-//////axious call to github
+//////Setting up parameters for the axious call to github
 let avatar = "";
 let email = null;
 function emailCheck(email){
@@ -192,11 +192,10 @@ axios
     emailCheck(email);
     genReadme(avatar, email);
     
-  })
+  }) //If no username input, this will return an error unless setup a catch
   .catch(function(err) {
-    console.log("no username")
-    avatar = "no pic";
-    email = "no email";
+    console.log("no GitHub username was provided")
+    avatar = "./Assets/RobotRon.jpg";
     genReadme(avatar, email);
    
   });
