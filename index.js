@@ -60,7 +60,7 @@ inquirer.prompt([
     message: "What is GitHub username to associate this project to?"
   },
   ]).then(function(data) {
-    console.log("Success!");
+    console.log("User input received");
 
 //////////BADGE////////////
 //Use shields.io to insert badge for license
@@ -83,7 +83,6 @@ if(data.license === "MIT"){
     return license
 }}
 badges();
-console.log(license);
 
 //////axious call to github
 let avatar = "";
@@ -96,7 +95,7 @@ function emailCheck(email){
         return email;
     }
 }
-console.log("1st email" + emailCheck(email));
+
 axios
   .get(`https://api.github.com/users/${data.gitHub}`)
   .then(function(res) {
@@ -106,8 +105,7 @@ axios
     console.log(emailCheck(email));
     console.log(avatar);
 ///////////////////////////////////////////
- 
-//Insert template literals and variable into the markdown template:
+ //Insert template literals and variable into the markdown template:
 
     readMe = 
 `# ${data.title}
@@ -181,7 +179,7 @@ For questions, open an issue or contact my GitHub
         if (err) {
             return console.log(err);
         }
-        console.log("OMG");
+        console.log("Look for README_Generated.md in folder");
         });
 });
 });
