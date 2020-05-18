@@ -9,8 +9,13 @@ April 2, 2020
 
 ## Description
 
-This application will create a README_Generated.md file using a series of prompts in node.js. 
+This application utilizes node.js to create a README_Generated.md file using a series of prompts featured in the npm inquirer package. Users' answers will be placed in specified sections on a pre-formated markdown template. This application will save the user time when creating a readme for any project. 
 
+Below is a quick demonstration showing how this app uses the command line interface (CLI) to navigate through the app using the prompts and its showing the subsequent markdown generated:
+
+<img src="Assets/demo.gif"></img>
+
+### User Story
 ```
 AS A USER
 I WANT TO easily generate a README.md that is consistent with a premade template
@@ -31,29 +36,37 @@ SO THAT I do not have to create a new one from scratch every time
 
 ## Installation
 
-### Please run the following command to install dependencies:
+### Clone the application from the [GitHub repo](https://github.com/jeffreyadamo/09_README_Generator) by entering the following command:
+
+```
+git clone https://github.com/jeffreyadamo/09_README_Generator.git
+```
+
+### Please run the following command to install the following dependencies:
 
 ```
 npm i
 ```
 
-## Usage
-
-After cloning from GitHub, go to into the 09_README_Generator directory and install the following dependencies:
+Dependencies:
 * inquirer
 * fs
 * axios
+## Usage
 
- Start the generator using:
+After cloning from GitHub and running npm install, navigate into the 09_README_Generator.
+
+
+ Start the README_Generator using:
  ```
   node index.js
   ```
   Follow the prompts on the command line and a README_Generated.md will be created.  
 
-### For directions on how to install and run this application, please watch this video tutorial:  
+### [For directions on how to install and run this application, please watch this video tutorial:](https://youtu.be/5fQqJjecoMk)  
 
-[![For directions on how to install and run this application:](https://i3.ytimg.com/vi/5fQqJjecoMk/maxresdefault.jpg)](https://youtu.be/5fQqJjecoMk)
-Take a look at the raw [README_Generated.md](./README_Generated.md) generated in this example.
+Take a look at the raw [README_Generated.md](./README_Generated.md) generated in this example. 
+* Note: this file will be overwritten each time the application is used
 
 
 ### For information detailing the JavaScript used for this application, please watch this video:
@@ -67,9 +80,9 @@ For more info please leave me a message or issue on GitHub.
 
 ### To run tests, run the following command:
 
-
-none.
-
+```
+none
+```
 
 ## Questions
 
