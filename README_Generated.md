@@ -1,14 +1,14 @@
-# README
+# Employee Summary Generator
 
 Jeffrey Adamo  
 UW Full Stack BootCamp  
-[README](#) at GitHub Pages  
+[Employee Summary Generator](#) at GitHub Pages  
 ![MIT](https://img.shields.io/badge/license-MIT-green)  
 ***
 
 ## Description
 
-This application will create a readme using a series of prompts in node.js
+Use CLI to generate a list of employees by type (Manager, Engineer, Intern) by filling out the prompt. The app will produce team.HTML in the output folder containing all employees.  
 
 ## Table of Contents
 
@@ -34,7 +34,7 @@ npm i
 
 ## Usage
 
-After cloning from GitHub, npm i, and run node index.js. Follow the prompts and a readme will be generated
+After cloning from GitHub and installing dependencies, run "node app.js" and follow the prompts. Each member has "name", "id", and "email" prompts, but each type of employee will ask additional questions. There is only one manager expected, so a confirmation prompt will be issued if more than one manager is added to the team. Look in the output folder for "team.html" when complete.
 
 ## License
 
@@ -42,14 +42,14 @@ After cloning from GitHub, npm i, and run node index.js. Follow the prompts and 
 
 ## Contributing
 
-Leave me an issue on GitHub
+Submit and issue or contact my GitHub
 
 ## Tests
 
 ### To run tests, run the following command:
 
 
-none
+"npm test" will ensure each employee class can have its properties accessed. These can be found in the test folder.
 
 
 ## Questions

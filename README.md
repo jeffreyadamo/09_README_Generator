@@ -52,7 +52,7 @@ After cloning from GitHub, go to into the 09_README_Generator directory and inst
 
 ### For directions on how to install and run this application, please watch this video tutorial:  
 
-[![For directions on how to install and run this application:](https://i3.ytimg.com/vi/5fQqJjecoMk/maxresdefault.jpg)](https://youtu.be/5fQqJjecoMk)
+
 Take a look at the raw [README_Generated.md](./README_Generated.md) generated in this example.
 
 
